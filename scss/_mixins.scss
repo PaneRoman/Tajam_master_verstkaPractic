@@ -1,0 +1,27 @@
+@mixin paragraphs {
+    p {
+        font-size: $paragraph-size;
+        line-height: 20px;
+        color: #000; 
+        font-style: italic;
+
+        @include link-style;
+
+        span {
+            font-weight: bold;
+        }
+    }   
+}
+
+@mixin link-style {
+    a {
+        text-decoration: none;
+        display: inline-block;
+        color: darkblue;
+        border-bottom: 1px solid red;
+
+        &:hover {
+            border-color: transparent;
+        }
+    }
+}
