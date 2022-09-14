@@ -67,6 +67,12 @@ gulp.task('webfonts', function () {
         .pipe(browserSyncServer.reload({stream: true}));
 });
 
+gulp.task('img', function () {
+    return gulp.src('img/**')
+        .pipe(gulp.dest('build/img'))
+        .pipe(browserSyncServer.reload({stream: true}));
+});
+
 gulp.task('serve', function () {
     browserSyncServer.init({
         server: "build"
@@ -77,6 +83,7 @@ gulp.task('serve', function () {
     gulp.watch("css/**/*.css", gulp.parallel('css'));
     gulp.watch("js/**/*.js", gulp.parallel('js'));
     gulp.watch("webfonts/**", gulp.parallel('webfonts'));
+    gulp.watch("img/**", gulp.parallel('img'));
 });
 
 gulp.task('copy', function () {
@@ -84,7 +91,8 @@ gulp.task('copy', function () {
         'css/**',
         '*.html',
         'js/**',
-        'webfonts/**'
+        'webfonts/**',
+        'img/**'
     ], {
         base: '.'
     })
