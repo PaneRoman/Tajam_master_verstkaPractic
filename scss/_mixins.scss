@@ -19,6 +19,16 @@
    
 }
 
+@mixin links {
+    a {
+        color: $dark-cyan-text-color;
+        
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
 
 
 

@@ -23,6 +23,7 @@ body {
 }
 
 @include button;
+@include links;
 
 %flex-space-between {
     display: flex;
@@ -165,6 +166,22 @@ header {
         cursor: pointer;
         font-family: $text-font;
         
+    }
+}
+
+.footer-wrap {
+    background: url(../img/bg-footer.jpg);
+    background-size: cover;
+
+    footer {
+        @extend %main-margin;
+        @extend %flex-space-between;
+        padding: 70px 10px;
+    }
+
+    .copyright {
+        color: $white-text-color;
+        font-weight: $text-medium;
     }
 }
 
